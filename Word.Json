@@ -1,0 +1,27 @@
+{
+  "food": [
+    "apple", "bread", "cheese", "milk", "egg", "rice", "meat", "fish", "cake", "pizza",
+    "water", "juice", "fruit", "soup", "salt", "sugar", "oil", "tea", "corn", "pear",
+    "bean", "plum", "beef", "pie", "jam"
+  ],
+  "cars": [
+    "wheel", "door", "seat", "glass", "engine", "brake", "fast", "slow", "road", "drive",
+    "tire", "light", "key", "fuel", "truck", "bus", "taxi", "park", "oil", "belt",
+    "mirror", "gas", "stop", "ride", "gear"
+  ],
+  "animals": [
+    "cat", "dog", "bird", "fish", "lion", "duck", "bear", "cow", "horse", "sheep",
+    "frog", "snake", "bee", "ant", "pig", "goat", "wolf", "deer", "hen", "owl",
+    "rat", "crab", "fox", "seal", "moth"
+  ],
+  "home": [
+    "door", "wall", "roof", "bed", "desk", "lamp", "sofa", "cup", "fork", "tv",
+    "bath", "room", "floor", "key", "box", "bag", "rug", "sink", "pan", "dish",
+    "bowl", "mat", "pot", "bin", "tray"
+  ],
+  "colors": [
+    "red", "blue", "green", "pink", "grey", "gold", "dark", "soft", "pale", "cool",
+    "warm", "pure", "deep", "bold", "dull", "navy", "mint", "lime", "rose", "sand",
+    "snow", "clay", "teal", "plum", "rust"
+  ]
+}
