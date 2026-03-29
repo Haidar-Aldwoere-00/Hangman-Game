@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2a2a2a;
+}
+:root {
+  --thickness: 4px;
+  --color-222: #222;
+}
+.continer {
+  margin: 30px auto;
+  width: 1100px;
+}
+.row {
+  display: flex;
+}
+hr {
+  border: 1px solid #eee;
+}
+.game-info {
+  display: flex;
+  .game-name {
+    flex: 1;
+    color: #ff7f50;
+    font-size: 20px;
+  }
+  .category {
+    flex: 1;
+    text-align: right;
+    color: #ff7f50;
+    span {
+      text-transform: capitalize;
+      color: #e91e63;
+      font-weight: bold;
+    }
+  }
+}
+.hangman-draw.wrong-1 .the-draw {
+  display: block;
+}
+.hangman-draw.wrong-2 .the-stand {
+  display: block;
+}
+.hangman-draw.wrong-3 .the-hang {
+  display: block;
+}
+.hangman-draw.wrong-4 .the-rope {
+  display: block;
+}
+.hangman-draw.wrong-5 .the-man .head-man {
+  display: block;
+}
+.hangman-draw.wrong-6 .the-man .body-man {
+  display: block;
+}
+.hangman-draw.wrong-7 .the-man .hands-man {
+  display: block;
+}
+.hangman-draw.wrong-8 .the-man .legs-man {
+  display: block;
+}
+.hangman-draw {
+  flex: 1;
+  background-color: #e0dede;
+  padding: 20px;
+  height: 324px;
+  /* child */
+  .the-draw {
+    width: 60px;
+    height: 280px;
+    border-bottom: 4px solid #222;
+    position: relative;
+    margin: auto;
+    left: -60px;
+    display: none;
+  }
+  /* child */
+  .the-stand {
+    position: absolute;
+    width: 4px;
+    background-color: #222;
+    height: 100%;
+    left: 50%;
+    margin-left: -2px;
+    display: none;
+  }
+  /* child */
+  .the-hang {
+    display: none;
+  }
+  .the-hang::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background-color: #222;
+    width: 100px;
+    left: 30px;
+    top: 15px;
+  }
+  .the-hang::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: #222;
+    left: 130px;
+    top: 15px;
+  }
+  /* child */
+  .the-rope {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 95px;
+    top: 45px;
+    border: 4px dashed #222;
+    display: none;
+  }
+  /* child and perant */
+  .the-man {
+    .head-man {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 4px solid #222;
+      position: absolute;
+      left: 105px;
+      top: 55px;
+      display: none;
+    }
+    /* child */
+    .body-man {
+      position: absolute;
+      background-color: #222;
+      width: 4px;
+      height: 100px;
+      top: 102px;
+      left: 130px;
+      display: none;
+    }
+    /* child */
+    .hands-man {
+      display: none;
+    }
+    .hands-man::after,
+    .hands-man::before {
+      content: "";
+      width: 50px;
+      height: var(--thickness);
+      position: absolute;
+      background-color: var(--color-222);
+      top: 130px;
+    }
+    .hands-man::after {
+      left: 134px;
+      transform: rotate(-30deg);
+    }
+    .hands-man::before {
+      left: 80px;
+      transform: rotate(30deg);
+    }
+    /* child */
+    .legs-man {
+      display: none;
+    }
+    .legs-man::after,
+    .legs-man::before {
+      content: "";
+      width: 50px;
+      height: var(--thickness);
+      position: absolute;
+      background-color: var(--color-222);
+      top: 210px;
+    }
+    .legs-man::after {
+      transform: rotate(30deg);
+      left: 134px;
+    }
+    .legs-man::before {
+      transform: rotate(-30deg);
+      left: 80px;
+    }
+  }
+}
+.latters {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  .latter-box {
+    box-shadow: var(--color-222) 5px 5px 12px;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    background-color: #009688;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    line-height: 55px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 12px;
+  }
+  .clicked {
+    background-color: var(--color-222);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+.latters.finished {
+  pointer-events: none;
+}
+.latter-guess {
+  margin: 10px auto;
+  background-color: #009688;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 140px;
+  span {
+    width: 60px;
+    height: 60px;
+    color: #ff7f50;
+    font-size: 24px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #fdfdfd;
+    border-bottom: 5px var(--color-222) solid;
+    border-radius: 12px;
+    box-shadow: var(--color-222) 0px 5px 13px;
+    transition: 0.3s;
+  }
+}
+.popup {
+  position: absolute;
+  background-color: #009687cd;
+  padding: 100px 20px;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  font-size: 40px;
+  border: 1px solid #ccc;
+  color: #fff;
+  border-radius: 12px;
+}
